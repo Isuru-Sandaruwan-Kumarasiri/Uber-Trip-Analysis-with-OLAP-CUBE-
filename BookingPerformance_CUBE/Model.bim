@@ -1,0 +1,684 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-GB",
+    "dataSources": [
+      {
+        "name": "SqlServer DESKTOP-83JOKDVDEMO DB",
+        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-83JOKDV\\DEMO;Initial Catalog=DB;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "Isuru Sandaruwan",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimBookingStatus",
+        "columns": [
+          {
+            "name": "StatusKey",
+            "dataType": "int64",
+            "sourceColumn": "StatusKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BookingStatus",
+            "dataType": "string",
+            "sourceColumn": "BookingStatus",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimBookingStatus",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimBookingStatus].*   FROM [dbo].[DimBookingStatus] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimBookingStatus].*   FROM [dbo].[DimBookingStatus] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimBookingStatus"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimCancellationReason",
+        "columns": [
+          {
+            "name": "ReasonKey",
+            "dataType": "int64",
+            "sourceColumn": "ReasonKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ReasonType",
+            "dataType": "string",
+            "sourceColumn": "ReasonType",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ReasonDescription",
+            "dataType": "string",
+            "sourceColumn": "ReasonDescription",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCancellationReason",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimCancellationReason].*   FROM [dbo].[DimCancellationReason] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimCancellationReason].*   FROM [dbo].[DimCancellationReason] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimCancellationReason"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimCustomer",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "string",
+            "sourceColumn": "CustomerID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CustomerRating",
+            "dataType": "double",
+            "sourceColumn": "CustomerRating",
+            "sourceProviderType": "Double"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCustomer",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimCustomer"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FullDate",
+            "dataType": "string",
+            "sourceColumn": "FullDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month",
+            "dataType": "int64",
+            "sourceColumn": "Month",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Day",
+            "dataType": "int64",
+            "sourceColumn": "Day",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimLocation",
+        "columns": [
+          {
+            "name": "LocationKey",
+            "dataType": "int64",
+            "sourceColumn": "LocationKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PickupLocation",
+            "dataType": "string",
+            "sourceColumn": "PickupLocation",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DropLocation",
+            "dataType": "string",
+            "sourceColumn": "DropLocation",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimLocation",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimLocation].*   FROM [dbo].[DimLocation] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimLocation].*   FROM [dbo].[DimLocation] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimLocation"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimPaymentMethod",
+        "columns": [
+          {
+            "name": "PaymentKey",
+            "dataType": "int64",
+            "sourceColumn": "PaymentKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PaymentMethod",
+            "dataType": "string",
+            "sourceColumn": "PaymentMethod",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimPaymentMethod",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimPaymentMethod].*   FROM [dbo].[DimPaymentMethod] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimPaymentMethod].*   FROM [dbo].[DimPaymentMethod] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimPaymentMethod"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimTime",
+        "columns": [
+          {
+            "name": "TimeKey",
+            "dataType": "int64",
+            "sourceColumn": "TimeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FullTime",
+            "dataType": "string",
+            "sourceColumn": "FullTime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Hour",
+            "dataType": "int64",
+            "sourceColumn": "Hour",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Minute",
+            "dataType": "int64",
+            "sourceColumn": "Minute",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TimeOfDay",
+            "dataType": "string",
+            "sourceColumn": "TimeOfDay",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimTime",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimTime].*   FROM [dbo].[DimTime] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimTime].*   FROM [dbo].[DimTime] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimTime"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimVehicle",
+        "columns": [
+          {
+            "name": "VehicleKey",
+            "dataType": "int64",
+            "sourceColumn": "VehicleKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "VehicleType",
+            "dataType": "string",
+            "sourceColumn": "VehicleType",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AvgVTAT",
+            "dataType": "double",
+            "sourceColumn": "AvgVTAT",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "AvgCTAT",
+            "dataType": "double",
+            "sourceColumn": "AvgCTAT",
+            "sourceProviderType": "Double"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimVehicle",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimVehicle].*   FROM [dbo].[DimVehicle] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimVehicle].*   FROM [dbo].[DimVehicle] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimVehicle"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "FactRideBookings",
+        "columns": [
+          {
+            "name": "FactID",
+            "dataType": "int64",
+            "sourceColumn": "FactID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BookingID",
+            "dataType": "string",
+            "sourceColumn": "BookingID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TimeKey",
+            "dataType": "int64",
+            "sourceColumn": "TimeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "VehicleKey",
+            "dataType": "int64",
+            "sourceColumn": "VehicleKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "LocationKey",
+            "dataType": "int64",
+            "sourceColumn": "LocationKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PaymentKey",
+            "dataType": "int64",
+            "sourceColumn": "PaymentKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerCancelReasonKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerCancelReasonKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DriverCancelReasonKey",
+            "dataType": "int64",
+            "sourceColumn": "DriverCancelReasonKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BookingValue",
+            "dataType": "double",
+            "sourceColumn": "BookingValue",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "RideDistance",
+            "dataType": "double",
+            "sourceColumn": "RideDistance",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "DriverRatings",
+            "dataType": "double",
+            "sourceColumn": "DriverRatings",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "BookingStatus",
+            "dataType": "string",
+            "sourceColumn": "BookingStatus",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CancelledByCustomer",
+            "dataType": "int64",
+            "sourceColumn": "CancelledByCustomer",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CancelledByDriver",
+            "dataType": "int64",
+            "sourceColumn": "CancelledByDriver",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IncompleteRides",
+            "dataType": "int64",
+            "sourceColumn": "IncompleteRides",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IncompleteReason",
+            "dataType": "string",
+            "sourceColumn": "IncompleteReason",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StatusKey",
+            "dataType": "int64",
+            "sourceColumn": "StatusKey",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactRideBookings",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[FactRideBookings].*   FROM [dbo].[FactRideBookings] ",
+              "dataSource": "SqlServer DESKTOP-83JOKDVDEMO DB"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Booking Value",
+            "expression": " SUM(FactRideBookings[BookingValue])"
+          },
+          {
+            "name": "Total Ride Distance",
+            "expression": " SUM(FactRideBookings[RideDistance])"
+          },
+          {
+            "name": "Booking Count",
+            "expression": " COUNTROWS(FactRideBookings)"
+          },
+          {
+            "name": "Avg Ride Distance",
+            "expression": " DIVIDE([Total Ride Distance], [Booking Count], 0)"
+          },
+          {
+            "name": "Avg Driver Rating",
+            "expression": " AVERAGE(FactRideBookings[DriverRatings])"
+          },
+          {
+            "name": "Customer Cancellations",
+            "expression": " SUM(FactRideBookings[CancelledByCustomer])"
+          },
+          {
+            "name": "Driver Cancellations",
+            "expression": " SUM(FactRideBookings[CancelledByDriver])"
+          },
+          {
+            "name": "Incomplete Rides",
+            "expression": " SUM(FactRideBookings[IncompleteRides])"
+          },
+          {
+            "name": "Customer Cancellation Rate",
+            "expression": " DIVIDE([Customer Cancellations], [Booking Count], 0)"
+          },
+          {
+            "name": "Driver Cancellation Rate",
+            "expression": " DIVIDE([Driver Cancellations], [Booking Count], 0)"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[FactRideBookings].*   FROM [dbo].[FactRideBookings] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FactRideBookings"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "163d07da-8bc6-4ebe-81f5-92ab76860714",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "DriverCancelReasonKey",
+        "toTable": "DimCancellationReason",
+        "toColumn": "ReasonKey",
+        "isActive": false
+      },
+      {
+        "name": "3cfb1695-b3c8-4d41-a900-0ca9d68b9973",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "StatusKey",
+        "toTable": "DimBookingStatus",
+        "toColumn": "StatusKey"
+      },
+      {
+        "name": "95697ec6-b95d-4558-9c58-7b3b78489d5b",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "CustomerCancelReasonKey",
+        "toTable": "DimCancellationReason",
+        "toColumn": "ReasonKey"
+      },
+      {
+        "name": "4d8b6142-f629-4c29-8ec0-a75d9a1e582f",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "ed8773fa-b2d2-46d9-acbc-e7bd495cc787",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "DateKey",
+        "toTable": "DimDate",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "125322ca-b98f-4e86-9f60-b5515620d72c",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "LocationKey",
+        "toTable": "DimLocation",
+        "toColumn": "LocationKey"
+      },
+      {
+        "name": "39795f04-0313-47aa-b84e-c448444a5b59",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "PaymentKey",
+        "toTable": "DimPaymentMethod",
+        "toColumn": "PaymentKey"
+      },
+      {
+        "name": "460703b5-4427-4106-934c-b79f063796a9",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "TimeKey",
+        "toTable": "DimTime",
+        "toColumn": "TimeKey"
+      },
+      {
+        "name": "c6ddb0d0-277f-413e-8172-6d5c0eea1d1c",
+        "fromTable": "FactRideBookings",
+        "fromColumn": "VehicleKey",
+        "toTable": "DimVehicle",
+        "toColumn": "VehicleKey"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
